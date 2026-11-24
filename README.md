@@ -24,6 +24,7 @@ same architecture, data, optimiser and schedule. The only differences are the la
 | [`ixi/z64_beta0.1`](https://huggingface.co/ChandraPrakashBathula/medlatent-vae/tree/main/ixi/z64_beta0.1) | 64 | 0.1 | 26.10 | 20.99 | 0.885 | 134.7 | 130.2 | 129.6 | 62/64 | 85.2 |
 | [`ixi/z128_beta0.1`](https://huggingface.co/ChandraPrakashBathula/medlatent-vae/tree/main/ixi/z128_beta0.1) | 128 | 0.1 | 26.25 | 21.14 | 0.886 | 135.8 | 131.2 | 128.7 | 89/128 | 87.3 |
 | [`ixi/z2_beta1`](https://huggingface.co/ChandraPrakashBathula/medlatent-vae/tree/main/ixi/z2_beta1) | 2 | 1 | 20.35 | 15.78 | 0.719 | 191.9 | 180.0 | 181.2 | 2/2 | 8.2 |
+| [`ixi/z3_beta1`](https://huggingface.co/ChandraPrakashBathula/medlatent-vae/tree/main/ixi/z3_beta1) | 3 | 1 | 20.80 | 16.14 | 0.743 | 195.0 | 176.2 | 177.2 | 3/3 | 10.3 |
 | [`ixi/z4_beta1`](https://huggingface.co/ChandraPrakashBathula/medlatent-vae/tree/main/ixi/z4_beta1) | 4 | 1 | 21.52 | 16.74 | 0.778 | 188.6 | 168.4 | 173.6 | 4/4 | 12.5 |
 | [`ixi/z8_beta1`](https://huggingface.co/ChandraPrakashBathula/medlatent-vae/tree/main/ixi/z8_beta1) | 8 | 1 | 23.59 | 18.61 | 0.836 | 159.2 | 145.7 | 149.1 | 8/8 | 20.0 |
 | [`ixi/z16_beta1`](https://huggingface.co/ChandraPrakashBathula/medlatent-vae/tree/main/ixi/z16_beta1) | 16 | 1 | 24.68 | 19.64 | 0.861 | 147.6 | 137.2 | 139.1 | 16/16 | 26.4 |
