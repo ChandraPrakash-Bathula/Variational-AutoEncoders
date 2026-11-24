@@ -1,0 +1,40 @@
+# VAE experiment config. Any key can be overridden on the CLI (see train.py --help).  [CelebA 64x64 RGB variant]
+seed: 42
+deterministic: false
+
+# data
+data_dir: data/celeba/processed
+output_dir: outputs_celeba
+image_size: 64          # set from the data
+in_channels: 3           # set from the data
+
+# model (keep identical to autoencoder/config.yaml for a fair comparison)
+latent_dim: 128
+base_channels: 32
+channel_mults: [1, 2, 4, 8, 16]
+
+# VAE-specific
+beta: 0.1               # KL weight (normalised by #pixels, see vae/model.py)
+kl_warmup_epochs: 10    # linear KL ramp-up (validation always uses full beta)
+
+# optimisation (keep identical to autoencoder/config.yaml)
+epochs: 50                # 6x more images per epoch than IXI
+batch_size: 64
+lr: 2.0e-4
+weight_decay: 1.0e-4
+grad_clip: 1.0
+amp: true
+num_workers: 4
+patience: 10
+
+# logging
+vis_every: 5
+num_vis: 8
+
+# train-time augmentation (training batches only; see common/augment.py). Keep identical across AE/VAE.
+augment: true
+aug_flip_p: 0.5        # left-right flip
+aug_rotate_deg: 0.0   # faces are pre-aligned: flip only
+aug_scale: 0.0
+aug_translate: 0.0
+aug_gamma: 1.0

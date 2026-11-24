@@ -1,0 +1,40 @@
+# VAE experiment config. Any key can be overridden on the CLI (see train.py --help).
+seed: 42
+deterministic: false
+
+# data
+data_dir: data/processed
+output_dir: outputs
+image_size: 128
+in_channels: 1
+
+# model (keep identical to autoencoder/config.yaml for a fair comparison)
+latent_dim: 128
+base_channels: 32
+channel_mults: [1, 2, 4, 8, 16]
+
+# VAE-specific
+beta: 0.1               # KL weight (normalised by #pixels, see vae/model.py)
+kl_warmup_epochs: 10    # linear KL ramp-up (validation always uses full beta)
+
+# optimisation (keep identical to autoencoder/config.yaml)
+epochs: 100
+batch_size: 64
+lr: 2.0e-4
+weight_decay: 1.0e-4
+grad_clip: 1.0
+amp: true
+num_workers: 4
+patience: 15            # early stopping patience in epochs (0 = disabled); counts only after KL warm-up
+
+# logging
+vis_every: 5
+num_vis: 8
+
+# train-time augmentation (training batches only; see common/augment.py). Keep identical across AE/VAE.
+augment: true
+aug_flip_p: 0.5        # left-right flip
+aug_rotate_deg: 10.0
+aug_scale: 0.05        # isotropic scale in [0.95, 1.05]
+aug_translate: 0.05    # shift, fraction of half the image width
+aug_gamma: 1.2         # intensity gamma, log-uniform in [1/1.2, 1.2]
